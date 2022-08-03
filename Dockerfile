@@ -15,7 +15,7 @@ RUN mvn -f /home/app/pom.xml clean package
 #install Java 11
 FROM amazoncorretto:11
 
-COPY --from=build /home/app/target/automation1.jar /usr/local/lib/automation1.jar
+COPY --from=build /home/app/target/io-automation-fw.jar /usr/local/lib/io-automation-fw.jar
 
 #run the executable
-ENTRYPOINT ["java", "-jar","/usr/local/lib/automation1.jar"]
+ENTRYPOINT ["java", "-jar","/usr/local/lib/io-automation-fw.jar"]
