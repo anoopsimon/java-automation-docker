@@ -11,7 +11,7 @@ COPY settings.xml /root/.m2
 COPY src /home/app/src
 COPY pom.xml /home/app
 COPY start.sh /home/app
-RUN mvn -f /home/app/pom.xml clean test
+RUN mvn -f /home/app/pom.xml clean 'test'
 
 #install Java 11
 #FROM amazoncorretto:11
@@ -20,5 +20,5 @@ RUN mvn -f /home/app/pom.xml clean test
 #COPY --from=build /home/app/start.sh /usr/local/lib/start.sh
 
 #run the executable
-ENTRYPOINT ["java", "-jar","/usr/local/lib/io-automation-fw.jar"]
+#ENTRYPOINT ["java", "-jar","/usr/local/lib/io-automation-fw.jar"]
 #ENTRYPOINT ["/usr/local/lib/start.sh"]
