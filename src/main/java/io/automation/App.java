@@ -1,4 +1,4 @@
-package org.example;
+package io.automation;
 
 /**
  * Hello world!
