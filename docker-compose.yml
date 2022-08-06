@@ -2,4 +2,5 @@ version: "2.2"
 #docker-compose up --build
 services:
   app:
-    build: .
+     build: .
+

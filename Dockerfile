@@ -10,6 +10,6 @@ RUN mkdir -p /root/.m2 \
 COPY settings.xml /root/.m2
 
 CMD ls
-COPY . /fw
+COPY . /framework
 
-RUN  cd /fw && mvn test
+RUN  cd /framework && mvn clean test
