@@ -22,7 +22,7 @@ public class TestCase1 {
     @Test
     public void TestCase01() throws InterruptedException {
         driver.get("https://www.google.com");
-        Thread.sleep(10000);
+        //Thread.sleep(10000);
     }
 
     @After

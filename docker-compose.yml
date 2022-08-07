@@ -1,5 +1,7 @@
-version: "2.2"
+#docker run --network="host" ioasimautofw_app  mvn -f framework/pom.xml test
 #docker-compose up --build
+
+version: "2.2"
 services:
   app:
      build: .

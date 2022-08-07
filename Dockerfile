@@ -1,3 +1,4 @@
+
 #install maven
 FROM maven:3.8.6-amazoncorretto-11 AS build
 
@@ -11,5 +12,6 @@ COPY settings.xml /root/.m2
 
 CMD ls
 COPY . /framework
+COPY pom.xml /framework/pom.xml
 
-RUN  cd /framework && mvn clean test
+RUN  cd /framework && mvn clean package -DskipTests=true
