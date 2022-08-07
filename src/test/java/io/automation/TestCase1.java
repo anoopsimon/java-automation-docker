@@ -1,6 +1,7 @@
 package io.automation;
 
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
@@ -12,23 +13,27 @@ import java.net.URL;
 
 public class TestCase1 {
 
-    WebDriver driver;
+    static String grid="http://localhost:4444/wd/hub";
+    static String appUrl="https://www.google.com";
+
+    private WebDriver driver;
     @Before
     public void setup() throws MalformedURLException {
-      driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"),new ChromeOptions());
+      this.driver = new RemoteWebDriver(new URL(grid),new ChromeOptions());
 
 
     }
     @Test
-    public void TestCase01() throws InterruptedException {
-        driver.get("https://www.google.com");
-        //Thread.sleep(10000);
+    public void TestCase01()
+    {
+        driver.get(appUrl);
+        Assert.assertTrue("Test should navigate to Google",driver.getCurrentUrl().contains("google"));
     }
 
     @After
     public void tearDown() {
-        if(driver!=null)
-            driver.quit();
+        if(this.driver!=null)
+            this.driver.quit();
 
 
     }
