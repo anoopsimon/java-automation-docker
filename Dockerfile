@@ -2,7 +2,7 @@
 #install maven
 FROM maven:3.8.6-amazoncorretto-11 AS build
 
-MAINTAINER Laxmi "laxmi.sv.1991@gmail.com"
+MAINTAINER ASLV "ASLV@gmail.com"
 
 #update maven settings file to work with internal repo
 RUN mkdir -p /root/.m2 \
