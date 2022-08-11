@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        docker { image 'dipjyotimetia/hybridtestframework:2.0' }
+        docker { image 'nodejs' }
     }
     stages {
         stage('Test') {
